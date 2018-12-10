@@ -5,7 +5,7 @@ simple analysis before to crawler ceair flight price
 
 - 该网站存在PC站与M站，分别是：`http://www.ceair.com`和`https://m.ceair.com`，接口分别是[PC站](http://www.ceair.com/otabooking/flight-search!doFlightSearch.shtml?searchCond={%22adtCount%22:1,%22chdCount%22:0,%22infCount%22:0,%22currency%22:%22CNY%22,%22tripType%22:%22OW%22,%22recommend%22:false,%22reselect%22:%22%22,%22page%22:%220%22,%22sortType%22:%22a%22,%22sortExec%22:%22a%22,%22segmentList%22:[{%22deptCd%22:%22SHA%22,%22arrCd%22:%22PEK%22,%22deptDt%22:%222018-12-11%22,%22deptAirport%22:%22%22,%22arrAirport%22:%22%22,%22deptCdTxt%22:%22%E4%B8%8A%E6%B5%B7%22,%22arrCdTxt%22:%22%E5%8C%97%E4%BA%AC%22,%22deptCityCode%22:%22SHA%22,%22arrCityCode%22:%22BJS%22}],%22version%22:%22A.1.0%22})和[M站](https://m.ceair.com/mobile/book/flight-search!flight.shtml?tripTypeFlag=0&tripType=OW&deptCode=SHA&arrvCode=BJS&deptDate=2018-12-11&backDate=&payType=RMB&goCodeType=1&backCodeType=1&channel=M)，对比之后决定采集M站
 - 从该链接的Query string可以看到主要参数如下：
-```json
+```
 {
 tripTypeFlag: 0
 tripType: OW
@@ -21,7 +21,7 @@ channel: M
 ```
 其中重要的有`deptCode`、`arrvCode`、`deptDate`、`backDate`，根据查询字段判断分别是：出发城市、到大城市、出发日期、返程日期。
 - 搜索可得城市代码，例如：
-```json
+```
 {
         code: 'CAN',
         name: 'G广州',
